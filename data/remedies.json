@@ -1,0 +1,148 @@
+{
+    "remedies": [
+      {
+        "id": "R001",
+        "name": "Turmeric (Haldi)",
+        "scientific_name": "Curcuma longa",
+        "local_names": ["हल्दी", "മഞ്ഞൾ", "పసుపు", "மஞ்சள்"],
+        "properties": ["anti-inflammatory", "antiseptic", "digestive", "antioxidant"],
+        "indications": ["inflammation", "wound healing", "digestive issues", "cold", "cough", "joint pain"],
+        "preparation": [
+          "Mix 1 tsp turmeric powder with warm milk for internal use",
+          "Apply turmeric paste on wounds for healing",
+          "Turmeric tea with honey for cold and cough"
+        ],
+        "dosage": "1-2 tsp daily, not exceeding 3g per day",
+        "contraindications": ["gallstones", "blood thinning medications", "surgery within 2 weeks"],
+        "safety_level": "high",
+        "traditional_system": "Ayurveda",
+        "evidence_level": "strong"
+      },
+      {
+        "id": "R002",
+        "name": "Ginger (Adrak)",
+        "scientific_name": "Zingiber officinale",
+        "local_names": ["अदरक", "ഇഞ്ചി", "అల్లం", "இஞ்சி"],
+        "properties": ["digestive", "anti-nausea", "warming", "anti-inflammatory"],
+        "indications": ["nausea", "vomiting", "motion sickness", "digestive problems", "cold", "headache"],
+        "preparation": [
+          "Fresh ginger tea: Boil 1 inch fresh ginger in water for 10 minutes",
+          "Ginger powder: 1/4 tsp with honey",
+          "Fresh ginger juice: Few drops with honey"
+        ],
+        "dosage": "1-2g daily, fresh or 250-1000mg dried",
+        "contraindications": ["blood thinning medications", "gallstones", "heartburn"],
+        "safety_level": "high",
+        "traditional_system": "Ayurveda",
+        "evidence_level": "strong"
+      },
+      {
+        "id": "R003",
+        "name": "Tulsi (Holy Basil)",
+        "scientific_name": "Ocimum sanctum",
+        "local_names": ["तुलसी", "തുളസി", "తులసి", "துளசி"],
+        "properties": ["adaptogen", "respiratory", "immune-boosting", "stress-relieving"],
+        "indications": ["cough", "cold", "fever", "stress", "respiratory issues", "immunity"],
+        "preparation": [
+          "Tulsi tea: 5-6 fresh leaves boiled in water",
+          "Fresh juice: Extract from 10-12 leaves",
+          "Dried powder: 1/2 tsp with honey"
+        ],
+        "dosage": "5-6 fresh leaves daily or 300-600mg extract",
+        "contraindications": ["blood thinning medications", "fertility treatments"],
+        "safety_level": "high",
+        "traditional_system": "Ayurveda",
+        "evidence_level": "moderate"
+      },
+      {
+        "id": "R004",
+        "name": "Neem",
+        "scientific_name": "Azadirachta indica",
+        "local_names": ["नीम", "വേപ്പ്", "వేప", "வேப்பம்"],
+        "properties": ["antibacterial", "antifungal", "blood purifier", "skin healing"],
+        "indications": ["skin problems", "acne", "wound healing", "blood purification", "fever"],
+        "preparation": [
+          "Neem tea: Boil 5-6 leaves in water",
+          "Neem paste: Grind fresh leaves for topical use",
+          "Neem oil: For external application on skin"
+        ],
+        "dosage": "2-4 leaves daily or 500mg extract",
+        "contraindications": ["pregnancy", "breastfeeding", "autoimmune diseases", "diabetes medication"],
+        "safety_level": "medium",
+        "traditional_system": "Ayurveda",
+        "evidence_level": "moderate"
+      },
+      {
+        "id": "R005",
+        "name": "Ashwagandha",
+        "scientific_name": "Withania somnifera",
+        "local_names": ["अश्वगंधा", "അശ്വഗന്ധ", "అశ్వగంధ"],
+        "properties": ["adaptogen", "stress-relieving", "energy-boosting", "immune-supporting"],
+        "indications": ["stress", "anxiety", "fatigue", "insomnia", "low immunity", "weakness"],
+        "preparation": [
+          "Ashwagandha powder: 1-2 tsp with warm milk",
+          "Ashwagandha tea: Boil root powder in water",
+          "With honey: Mix powder with honey for better taste"
+        ],
+        "dosage": "1-6g daily of root powder or 300-600mg extract",
+        "contraindications": ["pregnancy", "breastfeeding", "autoimmune diseases", "sedative medications"],
+        "safety_level": "medium",
+        "traditional_system": "Ayurveda",
+        "evidence_level": "strong"
+      },
+      {
+        "id": "R006",
+        "name": "Amla (Indian Gooseberry)",
+        "scientific_name": "Phyllanthus emblica",
+        "local_names": ["आंवला", "നെല്ലിക്ക", "ఉసిరికాయ", "நெல்லிக்காய்"],
+        "properties": ["vitamin C rich", "antioxidant", "digestive", "immune-boosting"],
+        "indications": ["immunity", "digestive problems", "hair loss", "skin problems", "vitamin C deficiency"],
+        "preparation": [
+          "Fresh amla juice: Extract from fresh fruit",
+          "Amla powder: 1 tsp with water",
+          "Amla candy: Processed form for better taste"
+        ],
+        "dosage": "10-20ml fresh juice or 1-3g powder daily",
+        "contraindications": ["blood thinning medications", "diabetes medication"],
+        "safety_level": "high",
+        "traditional_system": "Ayurveda",
+        "evidence_level": "strong"
+      },
+      {
+        "id": "R007",
+        "name": "Fenugreek (Methi)",
+        "scientific_name": "Trigonella foenum-graecum",
+        "local_names": ["मेथी", "ഉലുവ", "మెంతులు", "வெந்தயம்"],
+        "properties": ["digestive", "blood sugar regulating", "galactagogue", "anti-inflammatory"],
+        "indications": ["diabetes", "digestive issues", "low milk production", "inflammation", "hair loss"],
+        "preparation": [
+          "Soaked seeds: Soak overnight and consume in morning",
+          "Fenugreek tea: Boil seeds in water",
+          "Powder: 1 tsp with water before meals"
+        ],
+        "dosage": "2-5g seeds daily or 1g powder",
+        "contraindications": ["pregnancy", "diabetes medication", "blood thinning medications"],
+        "safety_level": "medium",
+        "traditional_system": "Ayurveda",
+        "evidence_level": "moderate"
+      },
+      {
+        "id": "R008",
+        "name": "Cinnamon (Dalchini)",
+        "scientific_name": "Cinnamomum verum",
+        "local_names": ["दालचीनी", "കറുവപ്പട്ട", "దాల్చిన చెక్క", "இலவங்கப்பட்டை"],
+        "properties": ["warming", "digestive", "blood sugar regulating", "antimicrobial"],
+        "indications": ["diabetes", "digestive problems", "cold", "circulation problems", "menstrual irregularities"],
+        "preparation": [
+          "Cinnamon tea: Boil stick in water for 10 minutes",
+          "Cinnamon powder: 1/4 tsp with honey",
+          "With warm milk: Add powder to milk"
+        ],
+        "dosage": "1-4g daily (about 1/2 to 2 tsp)",
+        "contraindications": ["liver disease", "pregnancy in large amounts", "blood thinning medications"],
+        "safety_level": "high",
+        "traditional_system": "Ayurveda",
+        "evidence_level": "moderate"
+      }
+    ]
+  }
