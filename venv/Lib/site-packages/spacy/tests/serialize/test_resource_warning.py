@@ -1,12 +1,14 @@
 import warnings
 from unittest import TestCase
+
 import pytest
 import srsly
 from numpy import zeros
-from spacy.kb import KnowledgeBase, Writer
-from spacy.vectors import Vectors
+
+from spacy.kb.kb_in_memory import InMemoryLookupKB, Writer
 from spacy.language import Language
 from spacy.pipeline import TrainablePipe
+from spacy.vectors import Vectors
 from spacy.vocab import Vocab
 
 from ..util import make_tempdir
@@ -71,8 +73,8 @@ def entity_linker():
     nlp = Language()
 
     def create_kb(vocab):
-        kb = KnowledgeBase(vocab, entity_vector_length=1)
-        kb.add_entity("test", 0.0, zeros((1, 1), dtype="f"))
+        kb = InMemoryLookupKB(vocab, entity_vector_length=1)
+        kb.add_entity("test", 0.0, zeros((1,), dtype="f"))
         return kb
 
     entity_linker = nlp.add_pipe("entity_linker")
@@ -85,7 +87,7 @@ def entity_linker():
 
 
 objects_to_test = (
-    [nlp(), vectors(), custom_pipe(), tagger(), entity_linker()],
+    [nlp, vectors, custom_pipe, tagger, entity_linker],
     ["nlp", "vectors", "custom_pipe", "tagger", "entity_linker"],
 )
 
@@ -99,8 +101,9 @@ def write_obj_and_catch_warnings(obj):
             return list(filter(lambda x: isinstance(x, ResourceWarning), warnings_list))
 
 
-@pytest.mark.parametrize("obj", objects_to_test[0], ids=objects_to_test[1])
-def test_to_disk_resource_warning(obj):
+@pytest.mark.parametrize("obj_factory", objects_to_test[0], ids=objects_to_test[1])
+def test_to_disk_resource_warning(obj_factory):
+    obj = obj_factory()
     warnings_list = write_obj_and_catch_warnings(obj)
     assert len(warnings_list) == 0
 
@@ -120,7 +123,7 @@ def test_writer_with_path_py35():
 
 def test_save_and_load_knowledge_base():
     nlp = Language()
-    kb = KnowledgeBase(nlp.vocab, entity_vector_length=1)
+    kb = InMemoryLookupKB(nlp.vocab, entity_vector_length=1)
     with make_tempdir() as d:
         path = d / "kb"
         try:
@@ -129,7 +132,7 @@ def test_save_and_load_knowledge_base():
             pytest.fail(str(e))
 
         try:
-            kb_loaded = KnowledgeBase(nlp.vocab, entity_vector_length=1)
+            kb_loaded = InMemoryLookupKB(nlp.vocab, entity_vector_length=1)
             kb_loaded.from_disk(path)
         except Exception as e:
             pytest.fail(str(e))
@@ -137,9 +140,11 @@ def test_save_and_load_knowledge_base():
 
 class TestToDiskResourceWarningUnittest(TestCase):
     def test_resource_warning(self):
-        scenarios = zip(*objects_to_test)
+        items = [x() for x in objects_to_test[0]]
+        names = objects_to_test[1]
+        scenarios = zip(items, names)
 
-        for scenario in scenarios:
-            with self.subTest(msg=scenario[1]):
-                warnings_list = write_obj_and_catch_warnings(scenario[0])
+        for item, name in scenarios:
+            with self.subTest(msg=name):
+                warnings_list = write_obj_and_catch_warnings(item)
                 self.assertEqual(len(warnings_list), 0)

@@ -1,18 +1,19 @@
 # cython: infer_types=True
+# cython: profile=False
 from __future__ import print_function
+
 from cymem.cymem cimport Pool
 
 from collections import Counter
+
 import srsly
 
-from . cimport _beam_utils
-from ...typedefs cimport weight_t, attr_t
-from ...tokens.doc cimport Doc
 from ...structs cimport TokenC
+from ...typedefs cimport attr_t, weight_t
 from .stateclass cimport StateClass
 
-from ...errors import Errors
 from ... import util
+from ...errors import Errors
 
 
 cdef weight_t MIN_SCORE = -90000
@@ -148,7 +149,7 @@ cdef class TransitionSystem:
         action = self.lookup_transition(move_name)
         return action.is_valid(stcls.c, action.label)
 
-    cdef int set_valid(self, int* is_valid, const StateC* st) nogil:
+    cdef int set_valid(self, int* is_valid, const StateC* st) noexcept nogil:
         cdef int i
         for i in range(self.n_moves):
             is_valid[i] = self.c[i].is_valid(st, self.c[i].label)
@@ -190,8 +191,7 @@ cdef class TransitionSystem:
 
     def add_action(self, int action, label_name):
         cdef attr_t label_id
-        if not isinstance(label_name, int) and \
-           not isinstance(label_name, long):
+        if not isinstance(label_name, int):
             label_id = self.strings.add(label_name)
         else:
             label_id = label_name
@@ -229,7 +229,6 @@ cdef class TransitionSystem:
         return self
 
     def to_bytes(self, exclude=tuple()):
-        transitions = []
         serializers = {
             'moves': lambda: srsly.json_dumps(self.labels),
             'strings': lambda: self.strings.to_bytes(),

@@ -1,19 +1,17 @@
-# cython: infer_types=True, profile=True, binding=True
+# cython: infer_types=True, binding=True
+import importlib
+import sys
 from typing import Optional
+
 import numpy
-from thinc.api import CosineDistance, to_categorical, Model, Config
-from thinc.api import set_dropout_rate
+from thinc.api import Config, CosineDistance, Model, set_dropout_rate, to_categorical
 
-from ..tokens.doc cimport Doc
-
-from .trainable_pipe import TrainablePipe
-from .tagger import Tagger
-from ..training import validate_examples
-from ..language import Language
-from ._parser_internals import nonproj
-from ..attrs import POS, ID
+from ..attrs import ID
 from ..errors import Errors
-
+from ..language import Language
+from ..training import validate_examples
+from .tagger import Tagger
+from .trainable_pipe import TrainablePipe
 
 default_model_config = """
 [model]
@@ -32,14 +30,6 @@ maxout_pieces = 2
 subword_features = true
 """
 DEFAULT_MT_MODEL = Config().from_str(default_model_config)["model"]
-
-
-@Language.factory(
-    "nn_labeller",
-    default_config={"labels": None, "target": "dep_tag_offset", "model": DEFAULT_MT_MODEL}
-)
-def make_nn_labeller(nlp: Language, name: str, model: Model, labels: Optional[dict], target: str):
-    return MultitaskObjective(nlp.vocab, model, name)
 
 
 class MultitaskObjective(Tagger):
@@ -104,10 +94,9 @@ class MultitaskObjective(Tagger):
         cdef int idx = 0
         correct = numpy.zeros((scores.shape[0],), dtype="i")
         guesses = scores.argmax(axis=1)
-        docs = [eg.predicted for eg in examples]
         for i, eg in enumerate(examples):
             # Handles alignment for tokenization differences
-            doc_annots = eg.get_aligned()  # TODO
+            _doc_annots = eg.get_aligned()  # TODO
             for j in range(len(eg.predicted)):
                 tok_annots = {key: values[j] for key, values in tok_annots.items()}
                 label = self.make_label(j, tok_annots)
@@ -207,7 +196,6 @@ class ClozeMultitask(TrainablePipe):
             losses[self.name] = 0.
         set_dropout_rate(self.model, drop)
         validate_examples(examples, "ClozeMultitask.rehearse")
-        docs = [eg.predicted for eg in examples]
         predictions, bp_predictions = self.model.begin_update()
         loss, d_predictions = self.get_loss(examples, self.vocab.vectors.data, predictions)
         bp_predictions(d_predictions)
@@ -219,3 +207,11 @@ class ClozeMultitask(TrainablePipe):
 
     def add_label(self, label):
         raise NotImplementedError
+
+
+# Setup backwards compatibility hook for factories
+def __getattr__(name):
+    if name == "make_nn_labeller":
+        module = importlib.import_module("spacy.pipeline.factories")
+        return module.make_nn_labeller
+    raise AttributeError(f"module {__name__} has no attribute {name}")
