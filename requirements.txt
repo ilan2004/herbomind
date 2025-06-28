@@ -1,12 +1,10 @@
-streamlit
-spacy
-networkx
-plotly
-pandas
-scikit-learn
-numpy
-
-# SpaCy language models
-en_core_web_sm
+streamlit==1.46.1
+spacy==3.8.7
+networkx==3.5
+plotly==6.2.0
+pandas==2.3.0
+scikit-learn==1.7.0
+numpy==2.3.1
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
 # Optional medical model (uncomment if needed)
-# https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/en_core_sci_md-0.5.1.tar.gz
+# https://github.com/allenai/scispacy/releases/download/v0.5.4/en_core_sci_md-0.5.4-py3-none-any.whl
