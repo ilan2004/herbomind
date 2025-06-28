@@ -1,0 +1,268 @@
+{
+  "symptoms": [
+    {
+      "id": "S001",
+      "name": "headache",
+      "aliases": ["head pain", "migraine", "head discomfort", "cephalgia"],
+      "category": "neurological",
+      "description": "Pain or discomfort in the head, scalp, or neck",
+      "severity_indicators": {
+        "mild": ["dull", "slight", "minor"],
+        "moderate": ["throbbing", "persistent"],
+        "severe": ["intense", "debilitating", "worst headache", "splitting"]
+      },
+      "duration_patterns": ["chronic", "acute", "recurring"],
+      "related_symptoms": ["nausea", "sensitivity to light", "dizziness"],
+      "common_causes": ["stress", "dehydration", "lack of sleep", "eye strain"],
+      "emergency_flags": ["sudden severe headache", "headache with fever and stiff neck", "headache after head injury"],
+      "traditional_associations": {
+        "ayurveda": ["pitta imbalance", "vata disturbance"],
+        "tcm": ["liver qi stagnation", "wind-heat invasion"]
+      },
+      "suitable_remedies": ["R002", "R003", "R005"]
+    },
+    {
+      "id": "S002",
+      "name": "fever",
+      "aliases": ["high temperature", "pyrexia", "febrile", "temperature"],
+      "category": "systemic",
+      "description": "Elevated body temperature above the normal range",
+      "severity_indicators": {
+        "mild": ["low-grade", "slight", "mild"],
+        "moderate": ["moderate", "persistent"],
+        "severe": ["high", "extreme", "dangerous"]
+      },
+      "duration_patterns": ["acute", "intermittent", "persistent"],
+      "related_symptoms": ["chills", "sweating", "fatigue", "body aches"],
+      "common_causes": ["infection", "inflammation", "heat exposure"],
+      "emergency_flags": ["fever above 103°F (39.4°C)", "fever with rash", "fever lasting more than 3 days"],
+      "traditional_associations": {
+        "ayurveda": ["pitta aggravation", "ama accumulation"],
+        "tcm": ["heat pathogen", "yin deficiency"]
+      },
+      "suitable_remedies": ["R003", "R004", "R008"]
+    },
+    {
+      "id": "S003",
+      "name": "cough",
+      "aliases": ["hacking", "throat clearing", "barking", "wheezing"],
+      "category": "respiratory",
+      "description": "Sudden expulsion of air from the lungs to clear the air passages",
+      "severity_indicators": {
+        "mild": ["occasional", "slight", "tickling"],
+        "moderate": ["persistent", "frequent", "productive"],
+        "severe": ["violent", "uncontrollable", "exhausting", "painful"]
+      },
+      "duration_patterns": ["acute", "chronic", "seasonal", "nocturnal"],
+      "related_symptoms": ["sore throat", "congestion", "runny nose", "chest pain"],
+      "common_causes": ["cold", "flu", "allergies", "asthma", "smoking"],
+      "emergency_flags": ["coughing up blood", "difficulty breathing", "choking"],
+      "traditional_associations": {
+        "ayurveda": ["kapha imbalance", "vata disturbance"],
+        "tcm": ["wind-cold invasion", "lung heat"]
+      },
+      "suitable_remedies": ["R001", "R002", "R003"]
+    },
+    {
+      "id": "S004",
+      "name": "joint pain",
+      "aliases": ["arthralgia", "aching joints", "joint discomfort", "articular pain"],
+      "category": "musculoskeletal",
+      "description": "Pain, stiffness, or swelling in one or more joints",
+      "severity_indicators": {
+        "mild": ["slight", "occasional", "minor"],
+        "moderate": ["persistent", "troublesome", "limiting"],
+        "severe": ["debilitating", "excruciating", "immobilizing"]
+      },
+      "duration_patterns": ["acute", "chronic", "intermittent", "morning", "evening"],
+      "related_symptoms": ["stiffness", "swelling", "redness", "warmth", "limited mobility"],
+      "common_causes": ["arthritis", "injury", "overuse", "inflammation", "gout"],
+      "emergency_flags": ["sudden joint pain with fever", "joint appears deformed", "unable to move joint"],
+      "traditional_associations": {
+        "ayurveda": ["vata imbalance", "ama accumulation"],
+        "tcm": ["cold-damp obstruction", "liver qi stagnation"]
+      },
+      "suitable_remedies": ["R001", "R005", "R007"]
+    },
+    {
+      "id": "S005",
+      "name": "digestive issues",
+      "aliases": ["indigestion", "stomach problems", "digestive discomfort", "dyspepsia"],
+      "category": "gastrointestinal",
+      "description": "Problems related to the digestion of food in the digestive tract",
+      "severity_indicators": {
+        "mild": ["occasional", "slight", "minor"],
+        "moderate": ["persistent", "troublesome", "regular"],
+        "severe": ["debilitating", "intense", "constant"]
+      },
+      "duration_patterns": ["acute", "chronic", "after meals", "intermittent"],
+      "related_symptoms": ["bloating", "gas", "nausea", "heartburn", "stomach pain"],
+      "common_causes": ["poor diet", "stress", "food intolerance", "eating too quickly"],
+      "emergency_flags": ["severe abdominal pain", "bloody stool", "persistent vomiting"],
+      "traditional_associations": {
+        "ayurveda": ["agni imbalance", "ama accumulation"],
+        "tcm": ["spleen qi deficiency", "liver qi stagnation"]
+      },
+      "suitable_remedies": ["R001", "R002", "R006", "R007"]
+    },
+    {
+      "id": "S006",
+      "name": "skin problems",
+      "aliases": ["rash", "skin irritation", "dermatitis", "skin condition"],
+      "category": "dermatological",
+      "description": "Various conditions affecting the skin's appearance or function",
+      "severity_indicators": {
+        "mild": ["slight", "localized", "minor"],
+        "moderate": ["spreading", "persistent", "uncomfortable"],
+        "severe": ["widespread", "painful", "debilitating"]
+      },
+      "duration_patterns": ["acute", "chronic", "recurring", "seasonal"],
+      "related_symptoms": ["itching", "redness", "swelling", "dryness", "flaking"],
+      "common_causes": ["allergies", "infection", "autoimmune conditions", "environmental factors"],
+      "emergency_flags": ["rapidly spreading rash", "rash with fever", "severe allergic reaction"],
+      "traditional_associations": {
+        "ayurveda": ["pitta imbalance", "kapha disturbance"],
+        "tcm": ["heat toxins", "blood stagnation"]
+      },
+      "suitable_remedies": ["R004", "R006"]
+    },
+    {
+      "id": "S007",
+      "name": "stress",
+      "aliases": ["anxiety", "tension", "worry", "nervousness"],
+      "category": "psychological",
+      "description": "Mental or emotional strain resulting from demanding circumstances",
+      "severity_indicators": {
+        "mild": ["occasional", "slight", "manageable"],
+        "moderate": ["persistent", "troublesome", "distracting"],
+        "severe": ["overwhelming", "debilitating", "constant"]
+      },
+      "duration_patterns": ["acute", "chronic", "situational", "recurring"],
+      "related_symptoms": ["insomnia", "headache", "muscle tension", "irritability", "fatigue"],
+      "common_causes": ["work pressure", "relationship issues", "financial problems", "major life changes"],
+      "emergency_flags": ["panic attack", "thoughts of self-harm", "inability to function"],
+      "traditional_associations": {
+        "ayurveda": ["vata imbalance", "sadhaka pitta disturbance"],
+        "tcm": ["liver qi stagnation", "heart shen disturbance"]
+      },
+      "suitable_remedies": ["R003", "R005"]
+    },
+    {
+      "id": "S008",
+      "name": "fatigue",
+      "aliases": ["tiredness", "exhaustion", "lethargy", "weakness"],
+      "category": "systemic",
+      "description": "Extreme tiredness resulting from mental or physical exertion or illness",
+      "severity_indicators": {
+        "mild": ["slight", "temporary", "manageable"],
+        "moderate": ["persistent", "troublesome", "limiting"],
+        "severe": ["debilitating", "overwhelming", "constant"]
+      },
+      "duration_patterns": ["acute", "chronic", "morning", "evening", "after exertion"],
+      "related_symptoms": ["weakness", "sleepiness", "difficulty concentrating", "reduced motivation"],
+      "common_causes": ["lack of sleep", "stress", "poor diet", "anemia", "depression"],
+      "emergency_flags": ["sudden extreme fatigue", "fatigue with fever", "inability to perform daily activities"],
+      "traditional_associations": {
+        "ayurveda": ["vata imbalance", "ojas depletion"],
+        "tcm": ["qi deficiency", "blood deficiency"]
+      },
+      "suitable_remedies": ["R005", "R006"]
+    },
+    {
+      "id": "S009",
+      "name": "insomnia",
+      "aliases": ["sleeplessness", "sleep disturbance", "difficulty sleeping", "poor sleep"],
+      "category": "neurological",
+      "description": "Persistent problems falling or staying asleep",
+      "severity_indicators": {
+        "mild": ["occasional", "slight difficulty", "manageable"],
+        "moderate": ["frequent", "troublesome", "affecting daytime function"],
+        "severe": ["chronic", "debilitating", "complete inability to sleep"]
+      },
+      "duration_patterns": ["acute", "chronic", "intermittent", "onset", "maintenance"],
+      "related_symptoms": ["fatigue", "irritability", "anxiety", "difficulty concentrating"],
+      "common_causes": ["stress", "anxiety", "depression", "poor sleep habits", "caffeine"],
+      "emergency_flags": ["complete inability to sleep for multiple days", "hallucinations from lack of sleep"],
+      "traditional_associations": {
+        "ayurveda": ["vata imbalance", "pitta disturbance"],
+        "tcm": ["heart yin deficiency", "liver fire rising"]
+      },
+      "suitable_remedies": ["R003", "R005"]
+    },
+    {
+      "id": "S010",
+      "name": "cold",
+      "aliases": ["common cold", "upper respiratory infection", "runny nose", "stuffy nose"],
+      "category": "respiratory",
+      "description": "A viral infection of the upper respiratory tract",
+      "severity_indicators": {
+        "mild": ["slight", "manageable", "few symptoms"],
+        "moderate": ["noticeable", "uncomfortable", "multiple symptoms"],
+        "severe": ["debilitating", "extreme discomfort", "bedridden"]
+      },
+      "duration_patterns": ["acute", "recent onset", "lingering"],
+      "related_symptoms": ["cough", "sore throat", "congestion", "sneezing", "headache"],
+      "common_causes": ["rhinovirus", "coronavirus", "seasonal changes", "exposure to infected individuals"],
+      "emergency_flags": ["high fever", "difficulty breathing", "symptoms lasting more than 10 days"],
+      "traditional_associations": {
+        "ayurveda": ["kapha imbalance", "ama accumulation"],
+        "tcm": ["wind-cold invasion", "defensive qi weakness"]
+      },
+      "suitable_remedies": ["R001", "R002", "R003"]
+    }
+  ],
+  "categories": [
+    {
+      "id": "C001",
+      "name": "respiratory",
+      "description": "Symptoms related to breathing and the respiratory system"
+    },
+    {
+      "id": "C002",
+      "name": "gastrointestinal",
+      "description": "Symptoms related to the digestive system"
+    },
+    {
+      "id": "C003",
+      "name": "neurological",
+      "description": "Symptoms related to the brain and nervous system"
+    },
+    {
+      "id": "C004",
+      "name": "musculoskeletal",
+      "description": "Symptoms related to muscles, bones, and joints"
+    },
+    {
+      "id": "C005",
+      "name": "dermatological",
+      "description": "Symptoms related to the skin"
+    },
+    {
+      "id": "C006",
+      "name": "psychological",
+      "description": "Symptoms related to mental and emotional health"
+    },
+    {
+      "id": "C007",
+      "name": "systemic",
+      "description": "Symptoms affecting the entire body"
+    }
+  ],
+  "symptom_relationships": [
+    {
+      "primary_symptom": "S001",
+      "related_symptoms": ["S005", "S007", "S009"],
+      "relationship_type": "often_occurs_with"
+    },
+    {
+      "primary_symptom": "S003",
+      "related_symptoms": ["S010", "S002"],
+      "relationship_type": "often_occurs_with"
+    },
+    {
+      "primary_symptom": "S007",
+      "related_symptoms": ["S009", "S008"],
+      "relationship_type": "may_cause"
+    }
+  ]
+}
