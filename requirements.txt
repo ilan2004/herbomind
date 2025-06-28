@@ -8,6 +8,5 @@ numpy
 
 # SpaCy language models
 en_core_web_sm
-
 # Optional medical model (uncomment if needed)
 # https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/en_core_sci_md-0.5.1.tar.gz
